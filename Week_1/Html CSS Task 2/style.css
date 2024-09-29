@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(1.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 109vh;
+}
+
+.navbar{
+    width: 1200px;
+    height: 75px;
+    margin-left: 50px;
+}
+
+.icon{
+    width: 200px;
+    height: 70px;
+    float: left;
+}
+
+.logo{
+    color: #ff7200;
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 20px;
+    padding-top: 30px;
+    float: left;
+}
+
+.menu{
+    width: 200px;
+    height: 70px;
+    float: left;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-top: 45px;
+    margin-left: 62px;
+    font-size: 18px;
+}
+
+ul li a{
+    float: left;
+    text-decoration: none;
+    font-family: Arial;
+    font-weight: bold;
+    color: #fff;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #ff7200;
+}
+
+.search{
+    width: 250px;
+    float: left;
+    margin-left: 500px;
+    margin-top: 36px;
+}
+
+.srch{
+    float: left;
+    font-family: 'Times New Roman';
+    width: 170px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #ff7200;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.btn{
+    width: 80px;
+    height: 40px;
+    color: #fff;
+    border: 2px solid #ff7200;
+    background: #ff7200;
+    font-size: 16px;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.srch:focus{
+    outline: none;
+}
+
+.content{
+    width: 1200;
+    margin-top: 40px;
+    margin-left: 40px;
+    height: auto;
+    color: #fff;
+    position: relative;
+}
+
+.content .par{
+    font-family: Arial;
+    padding-top: 14px;
+    padding-left: 20px;
+    padding-bottom: 25px;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+
+.content h1{
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    padding-left: 20px;
+    margin-top: 9%;
+    letter-spacing: 2%;
+}
+
+.content .cn{
+    width: 160px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 1.5s ease;
+}
+
+.content .cn a{
+    text-decoration: none;
+    color: black;
+    transition: 3s ease;
+}
+
+.cn:hover{
+    background: #fff;
+}
+
+.content span{
+    color: #ff7200;
+    font-size: 60px;
+}
+

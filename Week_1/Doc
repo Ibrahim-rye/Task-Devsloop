@@ -1,0 +1,48 @@
+@media (max-width: 768px) {
+    .navbar, .welcome {
+        flex-direction: column;
+    }
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main {
+        width: 95%;
+    }
+    .blog-box {
+        width: 100%;
+    }
+}
+
+
+
+
+.menu ul li a:hover {
+    font-size: 22px;
+    transform: scale(1.05);
+}
+
+.btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+
+
+
+
+.menu ul li {
+    margin: 0 30px;
+}
+.welcome {
+    padding: 20px 0;
+}
+
+
+
+
+form {
+    width: 100%;
+    max-width: 500px;
+}
+
