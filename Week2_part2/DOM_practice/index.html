@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM elements practice</title>
+</head>
+<body>
+    <style>
+        .e1{
+            height: 100px;
+            width: 100px;
+            background-color: aquamarine;
+        }
+        .bold { font-weight: bold;}
+        .red-bg { background: red;}
+        .text-white { color: white;}
+        .big-font { font-size: 34px;}
+
+        #area{
+            background-color: black;
+            color: white;
+            padding: 24px;
+        }
+        #box{
+            background-color: red;
+            padding: 24px;
+        }
+    </style>
+
+    <h2 id="Title1">This is an Alert message</h2>
+    <h2 id="Title2">Loves apples</h2>
+
+    <ul id="mylist">
+        <li>Apple</li>
+    </ul>
+
+    <p id="myPara">Yoho Umais</p>
+
+    <ul id="List">
+        <li>Apples</li>
+        <li id="pearItem">Pears</li>
+        <li>Bananas</li>
+    </ul>
+
+    <h3>Appending multipul children</h3>
+    <ul id="my-list"></ul>
+
+    <p id="para">Just some <em>Text</em> </p>
+
+    <div id="area">
+        <h2>Put some text inside here</h2>
+    </div>
+
+</body>
+
+<script>
+
+    const myElement = document.createElement('div')
+    myElement.setAttribute('class', 'e1')
+    document.body.appendChild(myElement)
+    console.log(myElement)
+
+    const title1 = document.getElementById('Title1')
+    const title2 = document.getElementById('Title2')
+
+    title1.innerHTML = '<em>L do you know</em>'
+    title2.textContent = 'Who ?'
+
+    const myList = document.getElementById('mylist')
+    let newElement = document.createElement('li')
+    newElement.textContent = 'Apple 2'
+    myList.appendChild(newElement)
+
+    const fruitList = ["Apple 3", "Apple 4", "Apple 5", "Apple 6"]
+    for(let fruit of fruitList) {
+        let newFruitItem = document.createElement('li')
+        newFruitItem.textContent = fruit
+
+        myList.appendChild(newFruitItem)
+    }
+
+    const myPara = document.getElementById('myPara')
+    myPara.classList.add('bold', 'big-font')
+    myPara.classList.remove('bold')
+    myPara.classList.replace('big-font', 'red-bg')
+    myPara.classList.toggle('red-bg')
+    myPara.classList.toggle('red-bg')
+    console.log(myPara.classList.contains('text-white'))
+    console.log(myPara.classList)
+
+    const List = document.getElementById('List')
+    const pearItem = document.getElementById('pearItem')
+    console.log(List)
+    console.log(pearItem)
+    const orangeItem = document.createElement('li')
+    orangeItem.textContent = 'Oranges'
+    List.insertBefore(orangeItem, pearItem)
+
+    const mangoItem = document.createElement('li')
+    mangoItem.textContent = 'Man-goes'
+    function addToBeginning (parent, toInsert) {
+        const firstChild = parent.firstChild
+        parent.insertBefore(toInsert, firstChild)
+    }
+    addToBeginning(List, mangoItem)
+
+    function createListItem (text) {
+        var li = document.createElement('li')
+        li.textContent = text
+        return li
+    }
+    function appendChildren (parent, child) {
+        children.forEach(function (child) {
+            parent.appendChild(child)
+        })
+    }
+    var justList = document.getElementById('my-list')
+    var items = [
+        createListItem('Umais'),
+        createListItem('Khizar'),
+        createListItem('Haein')
+    ]
+    // appendChildren(justList, items)
+    items.forEach(function (li) {
+        justList.appendChild(li)
+    })
+
+    /*
+        beforebegin - before element
+        afterbegin - first child
+        beforeend - last child
+        afterend - after element
+    */
+    const Para = document.getElementById('para')
+    const em = Para.querySelector('em')
+    em.addEventListener('click', console.log)
+    Para.insertAdjacentHTML('afterend', '<strong>decode</strong>')
+
+    const Area = document.getElementById('area')
+    const box = document.createElement('div')
+    box.id = 'box'
+    Area.insertAdjacentElement('afterbegin', box)
+    const matc = Area.matches('#area')
+    console.log(matc)
+
+    justList.addEventListener('click', function(e){
+        const tar = e.target
+        if(tar.matches('li')) {
+            tar.style.backgroundColor = 'red'
+        }
+    })
+
+</script>
+
+</html>
